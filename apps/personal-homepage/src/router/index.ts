@@ -5,14 +5,15 @@ import Projects from '../views/Projects.vue'
 import TiltDemo from '../views/TiltDemo.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', redirect: '/home' },
+  { path: '/home', component: Home },
   { path: '/about', component: About },
   { path: '/projects', component: Projects },
   { path: '/tilt', component: TiltDemo }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes
 })
 

@@ -1,0 +1,30 @@
+{
+  "name": "@cheen/personal-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "lint": "vue-tsc --noEmit",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@cheen/core": "workspace:^",
+    "@cheen/types": "workspace:^",
+    "@cheen/ui": "workspace:^",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/test-utils": "^2.4.0",
+    "jsdom": "^23.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "vue-tsc": "2"
+  }
+}

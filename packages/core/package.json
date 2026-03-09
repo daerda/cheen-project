@@ -1,0 +1,30 @@
+{
+  "name": "@cheen/core",
+  "version": "1.0.0",
+  "description": "Shared composables and business logic",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "lint": "echo 'No linting for core package'",
+    "test:unit": "vitest"
+  },
+  "dependencies": {
+    "@cheen/types": "workspace:^"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^5.3.0",
+    "vue": "^3.4.0"
+  }
+}

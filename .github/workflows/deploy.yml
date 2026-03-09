@@ -1,40 +1,50 @@
-name: Deploy Monorepo App
+# .github/workflows/deploy.yml
+name: Deploy Monorepo to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
+      # 1. 检出代码
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup pnpm
+      # 2. 安装 pnpm
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
+          run_install: false
           
-      - name: Setup Node
+      # 3. 设置 Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'pnpm'
           
+      # 4. 安装依赖
       - name: Install dependencies
         run: pnpm install
         
-      - name: Build shared packages
+      # 5. 构建共享包
+      - name: Build packages
         run: |
           pnpm --filter @cheen/ui build
           pnpm --filter @cheen/core build
-          pnpm --filter @cheen/types build
           
+      # 6. 构建个人主页（确保 vite.config.ts 设置了 base: '/cheen-project/'）
       - name: Build personal-homepage
         run: pnpm --filter personal-homepage build
         
-      - name: Deploy to GitHub Pages
+      # 7. 部署到 GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

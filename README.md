@@ -6,12 +6,26 @@
 
 ```
 cheen-project/
-├── packages/
-│   ├── personal-homepage/    # 个人主页项目
-│   └── tech-summary/         # 技术总结项目
+├── apps/                           # 应用层（业务逻辑，不可被依赖）
+│   ├── personal-homepage/         # 个人主页应用 (Vue3 + Vite)
+│   └── tech-summary/              # 技术摘要应用 (Vue3 + Vite)
+├── packages/                       # 共享层（可被依赖）
+│   ├── ui/                        # UI 组件库 (@cheen/ui)
+│   │   ├── src/components/
+│   │   │   ├── BaseButton.vue
+│   │   │   ├── BaseCard.vue
+│   │   │   └── BaseModal.vue
+│   │   └── package.json
+│   ├── core/                      # 业务逻辑 Composables (@cheen/core)
+│   │   ├── src/composables/
+│   │   │   └── useCounter.ts
+│   │   └── package.json
+│   └── types/                     # 全局 TypeScript 类型 (@cheen/types)
+│       ├── src/index.ts
+│       └── package.json
 ├── package.json
 ├── pnpm-workspace.yaml
-└── README.md
+└── tsconfig.base.json
 ```
 
 ## 🚀 技术栈

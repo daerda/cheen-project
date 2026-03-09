@@ -26,6 +26,7 @@ console.log(currentRoute.value)
           <router-link to="/">首页</router-link>
           <router-link to="/about">关于</router-link>
           <router-link to="/projects">项目</router-link>
+          <router-link to="/tilt">3D 效果</router-link>
         </div>
       </nav>
     </header>

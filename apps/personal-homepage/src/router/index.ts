@@ -2,11 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
+import TiltDemo from '../views/TiltDemo.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
-  { path: '/projects', component: Projects }
+  { path: '/projects', component: Projects },
+  { path: '/tilt', component: TiltDemo }
 ]
 
 const router = createRouter({

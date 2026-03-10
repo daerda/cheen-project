@@ -141,7 +141,7 @@ const handleConfirm = (): void => {
 }
 
 .modal-close:hover {
-  background: #f3f4f6;
+  background: var(--color-gray-100);
   color: #333;
 }
 
@@ -167,7 +167,7 @@ const handleConfirm = (): void => {
 }
 
 .btn-cancel {
-  background: #f3f4f6;
+  background: var(--color-gray-100);
   border: 1px solid #e2e8f0;
   color: #666;
 }
@@ -177,7 +177,7 @@ const handleConfirm = (): void => {
 }
 
 .btn-confirm {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   border: none;
   color: white;
 }

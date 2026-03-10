@@ -7,7 +7,7 @@ describe('ArticleCard', () => {
     title: '测试文章标题',
     summary: '这是文章的摘要内容...',
     tags: ['Vue.js', '前端'],
-    date: '2024-03-01',
+    date: '2026-03-01',
     readTime: '10 分钟'
   }
 
@@ -37,7 +37,7 @@ describe('ArticleCard', () => {
     const wrapper = mount(ArticleCard, {
       props: mockArticle
     })
-    expect(wrapper.text()).toContain('2024-03-01')
+    expect(wrapper.text()).toContain('2026-03-01')
     expect(wrapper.text()).toContain('10 分钟')
   })
 

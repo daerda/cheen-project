@@ -64,12 +64,12 @@ const handleClick = (e: MouseEvent): void => {
 
 /* Types */
 .primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
 }
 
 .secondary {
-  background: #f3f4f6;
+  background: var(--color-gray-100);
   color: #374151;
 }
 

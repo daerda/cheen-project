@@ -5,25 +5,28 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm -r build",
+    "build": "turbo run build",
     "dev:homepage": "pnpm --filter @cheen/personal-homepage dev",
     "dev:tech": "pnpm --filter @cheen/tech-summary dev",
-    "build:homepage": "pnpm --filter @cheen/personal-homepage build",
-    "build:tech": "pnpm --filter @cheen/tech-summary build",
-    "test": "pnpm -r test",
-    "test:unit": "pnpm -r test:unit",
-    "lint": "pnpm -r lint",
-    "type-check": "pnpm -r type-check"
+    "build:homepage": "turbo run build --filter @cheen/personal-homepage",
+    "build:tech": "turbo run build --filter @cheen/tech-summary",
+    "test": "turbo run test",
+    "test:unit": "turbo run test:unit",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@types/node": "^25.3.5",
     "@vitejs/plugin-vue": "^5.0.0",
+    "turbo": "^2.8.15",
     "typescript": "^5.3.0",
     "vite": "^5.0.0",
     "vitest": "^1.0.0",
     "vue": "^3.4.0",
     "vue-tsc": "^1.8.0"
   },
+  "packageManager": "pnpm@10.31.0",
   "engines": {
     "node": ">=18.0.0"
   }

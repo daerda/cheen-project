@@ -5,12 +5,43 @@
  */
 
 // 2. Vue API
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 // 6. 逻辑组织
 const route = useRoute()
 const currentRoute = computed<string>(() => route.path)
+
+// 主题切换
+const isDark = ref(false)
+
+// 初始化主题（从 localStorage 读取或检测系统偏好）
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme) {
+    isDark.value = savedTheme === 'dark'
+  } else {
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+  applyTheme()
+})
+
+// 切换主题
+const toggleTheme = () => {
+  isDark.value = !isDark.value
+  applyTheme()
+}
+
+// 应用主题到 document
+const applyTheme = () => {
+  if (isDark.value) {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light')
+    localStorage.setItem('theme', 'light')
+  }
+}
 
 // 使用变量避免 TS6133 错误
 console.log(currentRoute.value)
@@ -21,12 +52,19 @@ console.log(currentRoute.value)
     <header class="header">
       <nav class="nav">
         <!-- 使用 kebab-case -->
-        <router-link to="/" class="logo">Cheen</router-link>
-        <div class="nav-links">
-          <router-link to="/">首页</router-link>
-          <router-link to="/about">关于</router-link>
-          <router-link to="/projects">项目</router-link>
-          <router-link to="/tilt">3D 效果</router-link>
+        <router-link to="/" class="logo">🍊Cheen🍊</router-link>
+        <div class="nav-right">
+          <div class="nav-links">
+            <router-link to="/">首页</router-link>
+            <router-link to="/about">关于</router-link>
+            <router-link to="/projects">项目</router-link>
+            <router-link to="/tilt">3D 效果</router-link>
+          </div>
+          <!-- 主题切换按钮 -->
+          <button class="theme-toggle" @click="toggleTheme" :title="isDark ? '切换到亮色模式' : '切换到暗色模式'">
+            <i v-if="isDark" class="iconfont icon-sun theme-icon">&#xe635;</i>
+            <i v-else class="iconfont icon-moon theme-icon">&#xe611;</i>
+          </button>
         </div>
       </nav>
     </header>
@@ -36,7 +74,7 @@ console.log(currentRoute.value)
     </main>
     
     <footer class="footer">
-      <p>&copy; 2024 Cheen. All rights reserved.</p>
+      <p>&copy; 2026 Cheen. All rights reserved.</p>
     </footer>
   </div>
 </template>
@@ -49,7 +87,7 @@ console.log(currentRoute.value)
 }
 
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 1rem 2rem;
 }
@@ -70,6 +108,12 @@ console.log(currentRoute.value)
   text-decoration: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -83,6 +127,36 @@ console.log(currentRoute.value)
 
 .nav-links a:hover {
   opacity: 0.8;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  line-height: 1;
+  font-size: 1.2rem;
 }
 
 .main {

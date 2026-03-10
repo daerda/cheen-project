@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@cheen/core": "workspace:^",
+    "@cheen/shared": "workspace:^",
     "@cheen/types": "workspace:^",
     "@cheen/ui": "workspace:^",
     "vue": "^3.4.0",

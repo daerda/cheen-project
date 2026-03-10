@@ -1,0 +1,61 @@
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 5136340 */
+  src: url('//at.alicdn.com/t/c/font_5136340_0wt56fgqf1kr.woff2?t=1773131239644') format('woff2'),
+       url('//at.alicdn.com/t/c/font_5136340_0wt56fgqf1kr.woff?t=1773131239644') format('woff'),
+       url('//at.alicdn.com/t/c/font_5136340_0wt56fgqf1kr.ttf?t=1773131239644') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 图标大小类 */
+.icon-xs {
+  font-size: 12px;
+}
+
+.icon-sm {
+  font-size: 14px;
+}
+
+.icon-md {
+  font-size: 16px;
+}
+
+.icon-lg {
+  font-size: 20px;
+}
+
+.icon-xl {
+  font-size: 24px;
+}
+
+.icon-2xl {
+  font-size: 32px;
+}
+
+/* 图标颜色类 */
+.icon-primary {
+  color: var(--color-primary);
+}
+
+.icon-success {
+  color: var(--color-success);
+}
+
+.icon-warning {
+  color: var(--color-warning);
+}
+
+.icon-error {
+  color: var(--color-error);
+}
+
+.icon-info {
+  color: var(--color-info);
+}

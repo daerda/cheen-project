@@ -11,6 +11,7 @@ export default defineConfig({
   },
   base: './',
   server: {
+    host: 'true', // 监听所有网络接口
     port: 3001
   }
 })

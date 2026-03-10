@@ -16,7 +16,7 @@ const userInfo: User = {
   name: 'Cheen',
   email: 'cheen@example.com',
   role: 'user',
-  createdAt: new Date('2024-01-01')
+  createdAt: new Date('2026-03-01')
 }
 </script>
 

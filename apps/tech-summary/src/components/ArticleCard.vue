@@ -78,7 +78,7 @@ defineProps<Props>()
 }
 
 .tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;

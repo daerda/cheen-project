@@ -9,7 +9,7 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 // 3. 跨包依赖
-import { BaseButton } from '@cheen/ui'
+import { BaseButton, Avatar } from '@cheen/ui'
 
 // 4. Props 定义（必须泛型 + withDefaults）
 interface Props {
@@ -51,7 +51,10 @@ const handleContact = (): void => {
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1 class="title">你好，我是 {{ displayName }}</h1>
+      <h1 class="title"><span class="title-txt">你好，这里是 </span><span class="overlap"><span v-for="(char, i) in displayName"
+            :key="i" :style="{ zIndex: displayName.length - i }">{{ char }}</span></span></h1>
+
+      <Avatar alt="我的头像" />
       <p class="subtitle">{{ props.subtitle }}</p>
       <p class="description">
         {{ props.description }}
@@ -73,17 +76,22 @@ const handleContact = (): void => {
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
+  border-radius: var(--radius-2xl);
   margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
 }
 
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.title-txt {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -91,13 +99,13 @@ const handleContact = (): void => {
 
 .subtitle {
   font-size: 1.5rem;
-  color: #4a5568;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
 }
 
 .description {
   font-size: 1.1rem;
-  color: #718096;
+  color: var(--color-text-tertiary);
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.6;
@@ -108,5 +116,21 @@ const handleContact = (): void => {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.overlap {
+  letter-spacing: -0.3rem;
+  /* text-transform: uppercase; */
+}
+
+.overlap span {
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  color: #FFFFFF;
+  font-size: 8rem;
+  position: relative;
+  display: inline-block;
+
+  text-shadow: 3px 1px 1px var(--color-primary), 2px 2px 1px var(--color-primary-light), 4px 2px 1px var(--color-primary), 3px 3px 1px var(--color-primary-light), 5px 3px 1px var(--color-primary), 4px 4px 1px var(--color-primary-light), 6px 4px 1px var(--color-primary), 5px 5px 1px var(--color-primary-light), 7px 5px 1px var(--color-primary), 6px 6px 1px var(--color-primary-light), 8px 6px 1px var(--color-primary), 7px 7px 1px var(--color-primary-light), 9px 7px 1px var(--color-primary);
+  transform: rotateX(20deg) ;
 }
 </style>

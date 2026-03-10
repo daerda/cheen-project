@@ -29,7 +29,7 @@ const skills = ref<Skill[]>([
     <hello-section name="Cheen" />
     
     <section class="skills-section">
-      <h2>技能专长</h2>
+      <h2><i class="iconfont icon-skills icon-lg icon-primary">&#xe71f;</i> 技能专长</h2>
       <div class="skills-grid">
         <!-- 使用 kebab-case -->
         <skill-card 
@@ -56,7 +56,11 @@ const skills = ref<Skill[]>([
 .skills-section h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .skills-grid {

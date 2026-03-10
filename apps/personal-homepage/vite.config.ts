@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => ({
       '@': resolve(__dirname, 'src')
     }
   },
+  server: {
+    host: true,  // 允许局域网访问
+    port: 5173   // 可选：指定端口
+  },
   base: mode === 'production' ? '/cheen-project/' : './',
   build: {
     outDir: 'dist',

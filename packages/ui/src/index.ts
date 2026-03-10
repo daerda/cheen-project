@@ -15,6 +15,7 @@ export type { VTiltOptions } from './directives/vTilt.js'
 export { default as BaseButton } from './components/BaseButton.vue'
 export { default as BaseCard } from './components/BaseCard.vue'
 export { default as TiltCard } from './components/TiltCard.vue'
+export { default as Avatar } from './components/Avatar.vue'
 
 // 异步导出大组件（优化初始加载）
 export const LazyBaseModal = defineAsyncComponent(

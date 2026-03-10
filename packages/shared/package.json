@@ -1,0 +1,15 @@
+{
+  "name": "@cheen/shared",
+  "version": "1.0.0",
+  "description": "Shared assets and styles",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*.css": "./styles/*.css",
+    "./*.png": "./assets/*.png",
+    "./*.jpg": "./assets/*.jpg",
+    "./*.svg": "./assets/*.svg",
+    "./styles/*": "./styles/*",
+    "./assets/*": "./assets/*"
+  }
+}

@@ -5,10 +5,7 @@
  */
 
 // 1. 类型导入在前
-import { ref, computed } from 'vue'
 import type { User } from '@cheen/types'
-
-
 // 3. 跨包依赖
 import { Avatar, BaseCard } from '@cheen/ui'
 
@@ -23,14 +20,6 @@ const userInfo: User = {
   bio: '6年前端开发与工程化经验，专注复杂 B 端 SaaS 系统与多端架构。<br/>主导过商户经营操作系统与全域营销中台从0到1建设，服务20+市场，数千商户。  ',
   createdAt: new Date('2026-03-01')
 }
-
-const subject = ref('咨询信息')
-const body = ref('你好，我对贵公司的服务很感兴趣...')
-
-// 使用计算属性构造 mailto 链接
-const mailtoLink = computed(() => {
-  return `mailto:${userInfo.email}?subject=${encodeURIComponent(subject.value)}&body=${encodeURIComponent(body.value)}`
-})
 </script>
 
 <template>

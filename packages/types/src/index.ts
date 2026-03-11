@@ -24,6 +24,14 @@ export interface User {
   role: UserRole
   /** 创建时间 */
   createdAt: Date
+  /** QQ */
+  qq?: string
+  /** 微信 */
+  wechat?: string
+  /** 个人简介 */
+  bio?: string
+  /** 头像URL */
+  avatarUrl?: string
 }
 
 /** 用户公开信息（脱敏） */

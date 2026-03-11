@@ -4,16 +4,12 @@
  * 展示项目列表
  */
 
-// 1. 类型导入在前
 import type { Project } from '@cheen/types'
 
-// 2. Vue API
 import { ref } from 'vue'
 
-// 3. 跨包依赖
 import { BaseButton, BaseCard } from '@cheen/ui'
 
-// 6. 逻辑组织
 const projects = ref<Project[]>([
   {
     id: '1',

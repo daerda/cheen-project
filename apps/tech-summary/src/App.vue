@@ -18,7 +18,7 @@ const articles = ref<Article[]>([
     title: 'Vue 3 Composition API 最佳实践',
     summary: '深入探讨 Vue 3 Composition API 的使用技巧，包括 reactive、ref、computed 等核心概念的实际应用。',
     tags: ['Vue.js', '前端'],
-    date: '2024-03-01',
+    date: '2026-03-01',
     readTime: '10 分钟'
   },
   {
@@ -26,7 +26,7 @@ const articles = ref<Article[]>([
     title: 'TypeScript 高级类型详解',
     summary: '学习 TypeScript 的高级类型系统，包括泛型、条件类型、映射类型等强大特性。',
     tags: ['TypeScript', '编程语言'],
-    date: '2024-02-20',
+    date: '2026-02-20',
     readTime: '15 分钟'
   },
   {
@@ -34,7 +34,7 @@ const articles = ref<Article[]>([
     title: 'Vite 构建工具深度解析',
     summary: '了解 Vite 的工作原理，以及如何利用 Vite 提升前端开发效率和构建性能。',
     tags: ['Vite', '工具'],
-    date: '2024-02-10',
+    date: '2026-02-10',
     readTime: '8 分钟'
   },
   {
@@ -42,7 +42,7 @@ const articles = ref<Article[]>([
     title: 'Monorepo 项目管理实战',
     summary: '使用 pnpm workspace 构建和管理前端 Monorepo 项目，提升代码复用和协作效率。',
     tags: ['工程化', 'Monorepo'],
-    date: '2024-01-28',
+    date: '2026-01-28',
     readTime: '12 分钟'
   }
 ])

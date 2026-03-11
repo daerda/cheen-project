@@ -52,12 +52,12 @@ console.log(currentRoute.value)
     <header class="header">
       <nav class="nav">
         <!-- 使用 kebab-case -->
-        <router-link to="/" class="logo">🍊Cheen🍊</router-link>
+        <router-link to="/" class="logo">Cheen</router-link>
         <div class="nav-right">
           <div class="nav-links">
             <router-link to="/">首页</router-link>
-            <router-link to="/about">关于</router-link>
-            <router-link to="/projects">项目</router-link>
+            <router-link to="/about">关于我</router-link>
+            <!-- <router-link to="/projects">项目</router-link> -->
             <router-link to="/tilt">3D 效果</router-link>
           </div>
           <!-- 主题切换按钮 -->
@@ -157,6 +157,7 @@ console.log(currentRoute.value)
 .theme-icon {
   line-height: 1;
   font-size: 1.2rem;
+  color: var(--color-primary-dark);
 }
 
 .main {

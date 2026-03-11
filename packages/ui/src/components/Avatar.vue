@@ -14,14 +14,17 @@ const props = withDefaults(defineProps<{
 </template>
 <style scoped>
 .avatar {
+    box-sizing: content-box;
     object-fit: cover;
 
     --s: 10rem;
-    --c1: #ffab9d;
-    --c2: #f3e4a4;
-    --b: 5px;
+    /* --c1: #ffab9d;
+    --c2: #f3e4a4; */
+    --c1: var(--color-primary);
+    --c2: var(--color-primary-subtle);
+    --b: 3px;
     --f: 1;
-    --bgOption: no-repeat center / calc(100% / var(--f));
+    --bgOption: content-box no-repeat center / calc(100% / var(--f));
 
     width: var(--s);
     height: var(--s);
@@ -33,16 +36,16 @@ const props = withDefaults(defineProps<{
             transparent)
             var(--bgOption);
     outline: var(--b) solid var(--c1);
-    border-radius: 0 0 999px 999px;
+    border-radius: 0 0 999px 999px ;
     outline-offset: calc((1 / var(--f) - 1) * var(--s) / 2 - var(--b));
-    padding-top: calc(var(--s) / 20);
+    padding-top: calc(var(--s) / 5);
     mask: linear-gradient(#000 0 0) no-repeat 50% calc(12px - (1 / var(--f) - 1) * var(--s) / 2 - var(--b)) / calc(100% / var(--f) - 3 * var(--b)) 50%,
         radial-gradient(circle closest-side,#000 99%, transparent)
         var(--bgOption)
 }
 
 .avatar:hover {
-    --f: 1.28;
+    --f: 1.35;
     transform: scale(var(--f));
 }
 </style>

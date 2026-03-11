@@ -6,7 +6,6 @@
 
 // 2. Vue API
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
 
 // 3. 跨包依赖
 import { BaseButton, Avatar } from '@cheen/ui'
@@ -22,7 +21,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  subtitle: '一名热爱技术的前端开发者',
+  subtitle: '一名爱技术爱生活的前端开发',
   description: '专注于 Vue.js 生态，擅长构建高性能、可维护的 Web 应用程序。'
 })
 
@@ -32,40 +31,43 @@ const emit = defineEmits<{
   viewProjects: []
   /** 联系我 */
   contact: []
+  /** 关于我 */
+  about: []
 }>()
 
 // 6. 逻辑组织
 const displayName = computed<string>(() => props.name)
 
-const router = useRouter()
-
 const handleViewProjects = (): void => {
-  router.push('/projects')
+  emit('viewProjects')
 }
 
-const handleContact = (): void => {
-  emit('contact')
+// const handleContact = (): void => {
+//   emit('contact')
+// }
+
+const handleAbout = (): void => {
+  emit('about')
 }
 </script>
 
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1 class="title"><span class="title-txt">你好，这里是 </span><span class="overlap"><span v-for="(char, i) in displayName"
+      <h1 class="title"><span class="title-txt">Hello, this is </span><span class="overlap"><span v-for="(char, i) in displayName"
             :key="i" :style="{ zIndex: displayName.length - i }">{{ char }}</span></span></h1>
 
-      <Avatar alt="我的头像" />
+      <Avatar @click="handleAbout" alt="我的头像" />
       <p class="subtitle">{{ props.subtitle }}</p>
       <p class="description">
         {{ props.description }}
       </p>
       <div class="actions">
-        <!-- 使用 kebab-case 作为 HTML 规范 -->
         <base-button type="primary" size="large" @click="handleViewProjects">
           查看项目
         </base-button>
-        <base-button type="secondary" size="large" @click="handleContact">
-          联系我
+        <base-button type="secondary" size="large" @click="handleAbout">
+          关于我
         </base-button>
       </div>
     </div>

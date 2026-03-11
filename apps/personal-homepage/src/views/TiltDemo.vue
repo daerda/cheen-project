@@ -4,19 +4,13 @@
  * 展示 3D 倾斜效果的各种用法
  */
 
-// 1. 类型导入
 import type { VTiltOptions } from '@cheen/ui'
 
-// 2. Vue API
 import { ref } from 'vue'
 
-// 3. 跨包依赖
 import { TiltCard, vTilt } from '@cheen/ui'
 
-// 4. 本地组件
-import HelloSection from '@/components/HelloSection.vue'
-
-// 6. 逻辑组织 - 不同配置示例
+// 不同配置示例
 const basicOptions = ref<VTiltOptions>({
   max: 15,
   scale: 1.02,
@@ -73,8 +67,6 @@ const projectCards = ref([
 
 <template>
   <div class="tilt-demo">
-    <hello-section name="3D Tilt Demo" />
-    
     <!-- 基础示例 -->
     <section class="demo-section">
       <h2>基础效果</h2>

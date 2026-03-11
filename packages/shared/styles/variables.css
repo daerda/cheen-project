@@ -10,6 +10,7 @@
   --color-primary: #FF7F5F;
   --color-primary-light: #FFB199;
   --color-primary-dark: #CC5C3F;
+  --color-primary-subtle: #f3e4a4;
   
   /* 功能色 */
   --color-success: #42b883;
@@ -157,6 +158,7 @@
   --color-primary: #667eea;
   --color-primary-light: #764ba2;
   --color-primary-dark: #5a67d8;
+  --color-primary-subtle: #bcc2f1;
 
   --color-bg-primary: #1a1a2e;
   --color-bg-secondary: #16213e;

@@ -87,8 +87,6 @@ pnpm --filter tech-summary test:unit
 ### Tech Summary (技术总结)
 
 技术文章汇总页面，包含：
-- 文章列表
 - 标签筛选
-- 阅读统计
 
 运行：`pnpm dev:tech`
